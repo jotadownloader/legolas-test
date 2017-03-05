@@ -1,0 +1,51 @@
+<html>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<select id="select_curse">
+  <option value="sdeve">Software Development</option>
+  <option value="music">Music and Arts</option>
+  <option value="webs">Web Development</option>
+  <option value="desing">Desinging Products</option>
+  <option value="machine_lear">Machine learning</option>
+  <option value="perso_deve">Personal Development</option>
+</select>
+
+<button class= "search_btn" type="button">Search</button>
+
+<script>
+	
+$(".search_btn").click(function() {
+
+var seleccionada = $("#select_curse").val();
+
+if(seleccionada == "sdeve"){
+
+var show_sdeve = $("#sdeve").html();
+
+$("#body_curso").append(show_sdeve);
+
+}
+
+});
+
+
+
+</script>
+
+<div id="body_curso">
+	
+</div>
+
+<script id="sdeve" type="text/template"> 
+
+<p> <b> Software Development </b> </p>
+{% for t in sdeve %}
+<p>{{t}}</p>
+{% endfor %}
+
+</script>
+
+</html>
+
+
